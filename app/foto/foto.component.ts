@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core'
 export class FotoComponent {
 
     @Input() titulo: String;
-    @Input() url: String;
+    @Input() urlFoto: String;
 }
