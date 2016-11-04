@@ -4,10 +4,11 @@ import { AppComponent }     from './app.component';
 import { HttpModule }       from '@angular/http';
 import { FotoModule }       from './foto/foto.module';
 import { OutputtextModule } from './outputText/outputtext.module';
-import { PainelModule } from './painel/painel.module'
+import { PainelModule }     from './painel/painel.module'
 import { CadastroComponent} from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component'
-import { routing } from './app.routes';
+import { routing }          from './app.routes';
+import { FormsModule }      from '@angular/forms';
 
 
 
@@ -19,7 +20,8 @@ import { routing } from './app.routes';
     HttpModule, 
     OutputtextModule, 
     PainelModule, 
-    routing 
+    routing,
+    FormsModule
   ],
   declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
   bootstrap:    [ AppComponent ]
