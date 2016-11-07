@@ -27,8 +27,13 @@ export class FotoService {
     }
 
     delete(id: number): Observable<Response> {
-    const urlParam = `${this.url}/${id}`;
-    return this.http.delete(urlParam, {headers: this.headers});
+        const urlParam = `${this.url}/${id}`;
+        return this.http.delete(urlParam, {headers: this.headers});
+    }
+
+    buscaPorId(id: number): Observable<FotoComponent>{
+        const urlParam = `${this.url}/${id}`;
+        return this.http.get(urlParam).map(res => res.json());
     }
 
     private handleErrorRemover(error: any): Promise<any> {
