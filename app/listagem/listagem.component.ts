@@ -11,17 +11,19 @@ import { FotoService } from '../foto/foto.service';
 export class ListagemComponent {
 
     fotos: Object[] = [];
+    service: FotoService;
 
     constructor(service: FotoService) {
-        
-        service.lista()
+        this.service = service;
+        this.service.lista()
             .subscribe(fotos => this.fotos = fotos,
                 erro => console.log(erro)
-            );
+            );      
+    }
 
-            
-
-            
+    remove(foto: FotoComponent): void{
+        this.service.remove(foto.id);
+        console.log("entrou no remover");
     }
 
 }

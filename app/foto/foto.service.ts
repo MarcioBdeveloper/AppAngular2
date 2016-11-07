@@ -9,7 +9,7 @@ export class FotoService {
 
     http: Http;
     headers: Headers;
-    url: string = 'http://localhost:8080/usuario/fotos';
+    url: string = 'http://localhost:8080/foto';
 
     constructor(http: Http) { 
 
@@ -19,13 +19,24 @@ export class FotoService {
     }
 
     lista(): Observable<FotoComponent[]> {
-
         return this.http.get(this.url).map(res => res.json());
     }
 
     cadastra(foto: FotoComponent): Observable<Response> {
-
         return this.http.post(this.url+"/salvar", JSON.stringify(foto), { headers: this.headers }); 
-
     }
+
+    remove(id: number): Promise<void> {
+    const urlParam = `${this.url}/${id}`;
+    return this.http.delete(urlParam, {headers: this.headers})
+        .toPromise()
+        .then(() => null)
+        .catch(this.handleError);
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error); // for demo purposes only
+        return Promise.reject(error.message || error);
+    }
+
 }

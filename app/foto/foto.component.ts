@@ -11,4 +11,5 @@ export class FotoComponent {
     @Input() titulo: String;
     @Input() urlFoto: String;
     descricao: String;
+    id: number;
 }
