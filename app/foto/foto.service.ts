@@ -26,16 +26,13 @@ export class FotoService {
         return this.http.post(this.url+"/salvar", JSON.stringify(foto), { headers: this.headers }); 
     }
 
-    remove(id: number): Promise<void> {
+    delete(id: number): Observable<Response> {
     const urlParam = `${this.url}/${id}`;
-    return this.http.delete(urlParam, {headers: this.headers})
-        .toPromise()
-        .then(() => null)
-        .catch(this.handleError);
+    return this.http.delete(urlParam, {headers: this.headers});
     }
 
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
+    private handleErrorRemover(error: any): Promise<any> {
+        console.error('Não Foi possivel remover a Foto!', error); // for demo purposes only
         return Promise.reject(error.message || error);
     }
 
