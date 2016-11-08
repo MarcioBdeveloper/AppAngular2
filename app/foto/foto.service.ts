@@ -1,6 +1,5 @@
 import { Http, Headers, Response } from '@angular/http';
 import { FotoComponent } from './foto.component';
-import 'rxjs/Rx';
 import { Observable } from 'rxjs'; 
 import { Injectable } from '@angular/core';
 

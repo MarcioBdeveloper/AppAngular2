@@ -9,6 +9,7 @@ import { CadastroComponent} from './cadastro/cadastro.component';
 import { ListagemComponent } from './listagem/listagem.component'
 import { routing }          from './app.routes';
 import { FormsModule, ReactiveFormsModule }      from '@angular/forms';
+import 'rxjs/Rx';
 
 
 @NgModule({
