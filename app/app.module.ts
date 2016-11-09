@@ -10,6 +10,7 @@ import { ListagemComponent } from './listagem/listagem.component'
 import { routing }          from './app.routes';
 import { FormsModule, ReactiveFormsModule }      from '@angular/forms';
 import 'rxjs/Rx';
+import { BotaoModule } from './botao/botao.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import 'rxjs/Rx';
     PainelModule, 
     routing,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BotaoModule
   ],
   declarations: [ AppComponent, CadastroComponent, ListagemComponent ],
   bootstrap:    [ AppComponent ]

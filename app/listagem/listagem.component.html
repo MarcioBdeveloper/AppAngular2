@@ -1,5 +1,5 @@
 <div class="jumbotron">
-        <h1 class="text-center">Angular 2</h1>
+        <h2 class="text-center">Angular 2</h2>
 </div>
 
 <div class="container">
@@ -24,7 +24,7 @@
                 <foto urlFoto="{{foto.urlFoto}}" titulo="{{foto.titulo}}"></foto>
             </a>
             <br/>
-            <button class="btn btn-danger btn-block" (click)="remove(foto)">Remover</button>
+            <botao nome="Remover" estilo="btn-danger btn-block" (acao)="remove(foto)" confirmacao="true"></botao>
         </my-painel>
     </div>
 </div>
